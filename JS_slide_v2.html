@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <title>JS-slide_v2</title>
+  <meta charset="UTF-8">
+  <meta name="description" content="classname으로 찾기">
+  <meta name="keywords" content="0,1,2,3,4,배열 ">
+  <meta name="author" content="Hevin">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+
+<!-- css링크 -->
+<link rel="stylesheet" type="text/css" href="css/destyle.css"><!-- 브라우저 초기화 -->
+
+<!-- 따라하고자 하는 페이지 https://www.navercorp.com/-->
+
+<!-- css -->
+ <style>
+   .slide_container {width: 60vw; height: 40vh; margin: 0 auto; position: relative; color:white;}
+
+   .myslide {width: 100%; height: 100%; background-color: rosybrown; position: absolute; font-size: 50px; display: none;}
+   .myslide:first-child {display: block;}
+
+   .button_prev {position: absolute; top: 50%; left: 2%;}
+   .button_next {position: absolute; top: 50%; right: 2%;}
+
+ </style>
+
+</head>
+
+<body>
+
+  <div class="slide_container">
+    <div class="myslide" >slide1</div>
+    <div class="myslide" >slide2</div>
+    <div class="myslide" >slide3</div>
+    <div class="myslide" >slide4</div>
+    <a class="button_prev" onclick="slidePrev()">Prev</a>
+    <a class="button_next" onclick="slideNext()">Next</a>
+  </div>
+
+
+ <!-- JS -->
+ <script>
+
+  var slideIndex = 1;  // 현재 보여지는 슬라이드의 넘버
+  var mySlide = document.getElementsByClassName('myslide');
+
+    function slidePrev()  {
+      
+      for (i=0 ; i<4 ; i++) {  //모든 슬라이드를 display="none"해주고
+         mySlide[i].style.display="none";
+      } 
+
+      if (slideIndex == 4) {  // 현재 슬라이드가 4일 경우에는 슬라이드3                    
+        mySlide[2].style.display="block";
+        slideIndex = 3         
+      }
+
+      else if (slideIndex == 3) {  // 현재 슬라이드가 3일 경우에는 슬라이드2        
+        mySlide[1].style.display="block";
+        slideIndex = 2  
+      }
+
+      else if (slideIndex == 2) {  // 현재 슬라이드가 2일 경우에는 슬라이드1     
+        mySlide[0].style.display="block";
+        slideIndex = 1
+      }
+
+      else if (slideIndex == 1) {  // 현재 슬라이드가 1일 경우에는 슬라이드4             
+        mySlide[3].style.display="block";
+        slideIndex = 4
+      } 
+      
+    }
+
+
+    function slideNext()  {   
+      
+      for (i=0 ; i<4 ; i++) {  //모든 슬라이드를 display="none"해주고
+         mySlide[i].style.display="none";
+      } 
+
+      if (slideIndex == 1) {  // 현재 슬라이드가 1일 경우에는 슬라이드2       
+        mySlide[1].style.display="block";
+        slideIndex = 2
+      }
+
+      else if (slideIndex == 2) {  // 현재 슬라이드가 2일 경우에는 슬라이드3        
+        mySlide[2].style.display="block";
+        slideIndex = 3  
+      }
+
+      else if (slideIndex == 3) {  // 현재 슬라이드가 3일 경우에는 슬라이드4                 
+        mySlide[3].style.display="block";
+        slideIndex = 4  
+      }
+
+      else if (slideIndex == 4) {  // 현재 슬라이드가 4일 경우에는 슬라이드1                
+        mySlide[0].style.display="block";
+        slideIndex = 1 
+      }
+
+    }
+     
+      
+        
+    
+
+ </script>
+
+ 
+</body> 
+
+
+
+</html>

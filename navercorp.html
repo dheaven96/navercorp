@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <title>NAVER Corporation</title>
+  <meta charset="UTF-8">
+  <meta name="description" content="네이버(주) 회사 소개, 주요 서비스, 투자 및 채용 정보 제공">
+  <meta name="keywords" content="네이버(주), 회사, 소개, 주요 서비스, 투자, 채용 정보">
+  <meta name="author" content="Hevin">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+
+<!-- css링크 -->
+<link rel="stylesheet" type="text/css" href="css/destyle.css"><!-- 브라우저 초기화 -->
+<link rel="stylesheet" type="text/css" href="css/navercorp.css"><!-- navercorp css 링크 -->
+
+</head>
+
+
+<body>
+
+<!-- 헤더 시작 -->
+ <header>
+    <nav class="gnb">
+
+      <div class="gnb_left">
+        <div class="logo">NAVER</div>
+      </div>
+
+      <div class="gnb_center">
+        <a href="a.html">네이버</a>
+        <a href="b.html">서비스</a>
+        <a href="c.html">가치실현</a>
+        <a href="d.html">홍보</a>
+        <a href="e.html">투자정보</a>
+        <a href="f.html">채용</a>
+      </div>
+
+      <div class="gnb_right">
+        <div>
+          <a href="work.html">KOR</a>
+          <div>|</div>
+          <a href="work.html" class="color_gr">ENG</a>
+        </div>
+        <div>
+          <div>=</div>
+        </div>
+      </div>
+
+    </nav>
+ </header>
+
+
+<!-- 메인 시작 -->
+ <main>
+  <div class="slide_container">
+
+    <div class="myslide">
+        <div class="myslide1_bg">
+          <div class="text_box">
+            <h1>삶의 가치를 높이는<br>기술을 연구합니다.</h1>
+            <p>당신이 더 가치 있는 일에 몰입할 수 있도록<br>삶을 더 깊이 이해하는 기술을 만들어갑니다.</p>          
+            <p><strong>1</strong>&nbsp;&nbsp;|&nbsp;&nbsp;4</p>
+          </div>
+          <h2 class="myslide1_logo"></h2>
+        </div>
+    </div>
+
+    <div class="myslide">
+        <div class="myslide2_bg">
+          <div class="text_box">
+            <h1>삶의 가치를 높이는<br>기술을 연구합니다.</h1>
+            <p>당신이 더 가치 있는 일에 몰입할 수 있도록<br>삶을 더 깊이 이해하는 기술을 만들어갑니다.</p>
+            <p><strong>2</strong>&nbsp;&nbsp;|&nbsp;&nbsp;4</p>
+          </div>
+          <h2 class="myslide2_logo"></h2>
+        </div>
+    </div>
+
+    <div class="myslide">
+        <div class="myslide3_bg">
+          <div class="text_box">
+            <h1>삶의 가치를 높이는<br>기술을 연구합니다.</h1>
+            <p>당신이 더 가치 있는 일에 몰입할 수 있도록<br>삶을 더 깊이 이해하는 기술을 만들어갑니다.</p>
+            <p><strong>3</strong>&nbsp;&nbsp;|&nbsp;&nbsp;4</p>
+          </div>
+          <h2 class="myslide3_logo"></h2>
+        </div>
+    </div>
+
+    <div class="myslide">
+        <div class="myslide4_bg">
+          <div class="text_box">
+            <h1>삶의 가치를 높이는<br>기술을 연구합니다.</h1>
+            <p>당신이 더 가치 있는 일에 몰입할 수 있도록<br>삶을 더 깊이 이해하는 기술을 만들어갑니다.</p>
+            <p><strong>4</strong>&nbsp;&nbsp;|&nbsp;&nbsp;4</p>
+          </div>
+          <h2 class="myslide4_logo"></h2>
+        </div>
+    </div> 
+
+
+    <a class="button_prev" onclick="slidePrev()"></a>
+    <a class="button_next" onclick="slideNext()"></a>
+
+    <div class="slide_bar_bg">
+      <span class="slide_bar" id="nowslide_bar"></span>
+    </div>
+
+    <div class="slide_num">
+        <strong id="slide_js_num">1</strong>&nbsp;&nbsp;|&nbsp;&nbsp;4
+      </div>
+    
+  
+  </div>
+
+ </main>
+
+
+  
+
+
+ <!-- JS -->
+ <script>
+
+  var slideIndex = 1;  // 현재 보여지는 슬라이드의 넘버
+  var mySlide = document.getElementsByClassName('myslide');
+  var currentbar = 25;
+  setTimeout(slideNext, 6000);
+
+    function slidePrev()  {
+      //모든 슬라이드를 display="none"해주고
+      for (i=0 ; i<mySlide.length ; i++) {  
+         mySlide[i].style.display="none";
+      } 
+
+      if (slideIndex == 1) {  // 현재 슬라이드가 1일 경우에는 마지막 슬라이드            
+        mySlide[mySlide.length -1].style.display="block";
+        slideIndex = mySlide.length;
+        currentbar = 100;
+        document.getElementById("nowslide_bar").style.width = currentbar + "%"; 
+
+        document.getElementById("slide_js_num").innerHTML = slideIndex;
+      }
+
+      else {  // 현재 슬라이드가 2.3.4일 경우에는 각각 전 슬라이드                
+        mySlide[slideIndex -2 ].style.display="block";
+        slideIndex = slideIndex - 1 ;
+        currentbar = slideIndex * 25;
+        document.getElementById("nowslide_bar").style.width = currentbar + "%";
+
+        document.getElementById("slide_js_num").innerHTML = slideIndex;
+      }
+    }
+
+
+    function slideNext()  {   
+      
+      console.log(mySlide.length)
+      //모든 슬라이드를 display="none"해주고
+      for (i=0 ; i<mySlide.length; i++) {  
+         mySlide[i].style.display="none";
+      } 
+
+     if (slideIndex == mySlide.length) {  // 현재 마지막 슬라이드 경우에는 슬라이드1                
+        mySlide[0].style.display="block";
+        currentbar = 25;
+        document.getElementById("nowslide_bar").style.width = currentbar + "%"; 
+        
+        slideIndex = 1;
+        document.getElementById("slide_js_num").innerHTML = slideIndex;
+      }
+
+      else {  // 현재 슬라이드가 1.2.3일 경우에는 각각 다음 슬라이드                
+        mySlide[slideIndex].style.display="block";
+        slideIndex = slideIndex + 1;
+        currentbar = slideIndex * 25;
+        document.getElementById("nowslide_bar").style.width = currentbar + "%"; 
+
+        document.getElementById("slide_js_num").innerHTML = slideIndex;
+      }
+     setTimeout(slideNext, 5000) 
+
+    }
+          
+        
+ </script>
+
+ 
+</body> 
+
+
+
+</html>

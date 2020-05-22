@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <title>JS-slide_v3</title>
+  <meta charset="UTF-8">
+  <meta name="description" content="classname으로 찾기">
+  <meta name="keywords" content="0,1,2,3,4,배열-length">
+  <meta name="author" content="Hevin">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+
+<!-- css링크 -->
+<link rel="stylesheet" type="text/css" href="css/destyle.css"><!-- 브라우저 초기화 -->
+
+<!-- 따라하고자 하는 페이지 https://www.navercorp.com/-->
+
+
+<!-- CSS -->
+ <style>
+  
+/* 네이버 헤더 css */
+header {width: 100%; height: 72px; position: fixed; z-index: 100; background-color: white; top: 0; left: 0;}
+
+.gnb {width: 100vw; height: 72px; padding:0 calc(50vw - 770px); box-sizing: border-box; display: flex; justify-content: space-between; align-items: center;}
+
+ .gnb_left {width:90px; height: 72px; display: flex; justify-content: flex-start; align-items: center; margin-left: 30px;}
+  .logo {width: 90px; height: 24px; color:#03C75A; font-family:  Arial, Helvetica, sans-serif; letter-spacing: -0.7px; font-weight: 800; font-size: 24px; line-height: 24px; text-decoration: none; text-align: center;}
+
+ .gnb_center {width:600px; height: 72px; display: flex; justify-content: space-between; align-items: center;}
+  .gnb_center a {font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 44px; letter-spacing: -0.6px; font-weight: 900; }
+  .gnb a:hover {color: #03C75A ;}
+
+ .gnb_right {width:150px; height: 72px; display: flex; justify-content: flex-end; align-items: center; margin-right: 30px; font-size: 12px;}
+  .gnb_right > div:first-child {width: 72px; display: flex; justify-content: space-between; align-items: center;  margin-right: 30px;}
+
+.color_gr {color: gray;}
+
+
+/* 네이버 메인 css */
+   h1 {font-size: 36px; line-height: 46px; font-family: Arial, Helvetica, sans-serif;}
+   p {font-size: 14px; line-height: 24px; font-family: Arial, Helvetica, sans-serif;}
+
+  
+   .slide_container {width: 100%; height: 90vh; margin: 0 auto; position: relative; color:white; margin-top: 72px;}
+
+   .myslide {width: 100%; height: 100%; background-color: #4C999E; position: absolute; font-size: 50px; display: none;}
+    .myslide:first-child {display: block;}
+    .text_box { position: absolute; left: 160px; bottom: 80px;}
+
+   .myslide h1 {margin-bottom: 32px;}
+   .myslide p {margin-bottom: 24px;}
+
+  
+   .myslide1_bg {width: 100%; height: 100%; background-image: url(img/img_main_slide1.jpeg); background-size: cover; background-position: center; display: flex; flex-direction: column; justify-content: center; padding: 0 150px;}
+   .myslide2_bg {width: 100%; height: 100%; background-image: url(img/img_main_slide2.jpeg); background-size: cover; background-position: center; display: flex; flex-direction: column; justify-content: center; padding: 0 150px;}
+   .myslide3_bg {width: 100%; height: 100%; background-image: url(img/img_main_slide3.jpeg); background-size: cover; background-position: center; display: flex; flex-direction: column; justify-content: center; padding: 0 150px;}
+   .myslide4_bg {width: 100%; height: 100%; background-image: url(img/img_main_slide4.jpeg); background-size: cover; background-position: center; display: flex; flex-direction: column; justify-content: center; padding: 0 150px;}
+
+   .myslide1_logo { position: absolute; right: 160px; width: 190px; background-image: url(img/sprite.png); background-position: 0px -1063px; bottom: 78px; height: 36px;}
+   .myslide2_logo { position: absolute; right: 160px; width: 190px; background-image: url(img/sprite.png); background-position: -143px -1101px; bottom: 60px; height: 53px;}
+   .myslide3_logo { position: absolute; right: 160px; width: 134px; background-image: url(img/sprite.png); background-position: 0 -1104px; bottom: 70px; height: 50px;}
+   .myslide4_logo { position: absolute; right: 160px; width: 168px; background-image: url(img/sprite.png); background-position: -192px -1162px; bottom: 70px; height: 24px;}
+
+
+   .button_prev {position: absolute; bottom: 198px; left: 85px; width: 46px; height: 46px; background-image: url(img/sprite.png); background-position: -296px -99px; opacity: 0.8; transition: opacity 0.3s;}
+    .button_prev:hover {opacity: 1;}
+   .button_next {position: absolute; bottom: 198px; right: 85px; width: 46px; height: 46px; background-image: url(img/sprite.png); background-position: -346px -99px; opacity: 0.8; transition: opacity 0.3s;}
+    .button_next:hover {opacity: 1;}
+
+   .slide_bar_bg {position: absolute; bottom: 198px; left: 160px; height: 1px; width: calc(100% - 320px); border-top: 1px solid rgba(255,255,255,0.3); margin-bottom: 20px; }
+    .slide_bar {position: absolute; height: 1px; width: 25%; border-top: 1px solid rgba(255,255,255,1); margin-bottom: 20px; }
+
+ </style>
+
+</head>
+
+
+<body>
+
+<!-- 헤더 시작 -->
+ <header>
+    <nav class="gnb">
+
+      <div class="gnb_left">
+        <div class="logo">NAVER</div>
+      </div>
+
+      <div class="gnb_center">
+        <a href="a.html">네이버</a>
+        <a href="b.html">서비스</a>
+        <a href="c.html">가치실현</a>
+        <a href="d.html">홍보</a>
+        <a href="e.html">투자정보</a>
+        <a href="f.html">채용</a>
+      </div>
+
+      <div class="gnb_right">
+        <div>
+          <a href="work.html">KOR</a>
+          <div>|</div>
+          <a href="work.html" class="color_gr">ENG</a>
+        </div>
+        <div>
+          <div>=</div>
+        </div>
+      </div>
+
+    </nav>
+ </header>
+
+
+<!-- 메인 시작 -->
+ <main>
+  <div class="slide_container">
+
+    <div class="myslide">
+        <div class="myslide1_bg">
+          <div class="text_box">
+            <h1>삶의 가치를 높이는<br>기술을 연구합니다.</h1>
+            <p>당신이 더 가치 있는 일에 몰입할 수 있도록<br>삶을 더 깊이 이해하는 기술을 만들어갑니다.</p>          
+            <p><strong>1</strong>&nbsp;&nbsp;|&nbsp;&nbsp;4</p>
+          </div>
+          <h2 class="myslide1_logo"></h2>
+        </div>
+    </div>
+
+    <div class="myslide">
+        <div class="myslide2_bg">
+          <div class="text_box">
+            <h1>삶의 가치를 높이는<br>기술을 연구합니다.</h1>
+            <p>당신이 더 가치 있는 일에 몰입할 수 있도록<br>삶을 더 깊이 이해하는 기술을 만들어갑니다.</p>
+            <p><strong>2</strong>&nbsp;&nbsp;|&nbsp;&nbsp;4</p>
+          </div>
+          <h2 class="myslide2_logo"></h2>
+        </div>
+    </div>
+
+    <div class="myslide">
+        <div class="myslide3_bg">
+          <div class="text_box">
+            <h1>삶의 가치를 높이는<br>기술을 연구합니다.</h1>
+            <p>당신이 더 가치 있는 일에 몰입할 수 있도록<br>삶을 더 깊이 이해하는 기술을 만들어갑니다.</p>
+            <p><strong>3</strong>&nbsp;&nbsp;|&nbsp;&nbsp;4</p>
+          </div>
+          <h2 class="myslide3_logo"></h2>
+        </div>
+    </div>
+
+    <div class="myslide">
+        <div class="myslide4_bg">
+          <div class="text_box">
+            <h1>삶의 가치를 높이는<br>기술을 연구합니다.</h1>
+            <p>당신이 더 가치 있는 일에 몰입할 수 있도록<br>삶을 더 깊이 이해하는 기술을 만들어갑니다.</p>
+            <p><strong>4</strong>&nbsp;&nbsp;|&nbsp;&nbsp;4</p>
+          </div>
+          <h2 class="myslide4_logo"></h2>
+        </div>
+    </div> 
+
+
+    <a class="button_prev" onclick="slidePrev()"></a>
+    <a class="button_next" onclick="slideNext()"></a>
+
+    <div class="slide_bar_bg">
+      <span class="slide_bar" id="nowslide_bar"></span>
+    </div>
+  
+  </div>
+
+ </main>
+
+
+  
+
+
+ <!-- JS -->
+ <script>
+
+  var slideIndex = 1;  // 현재 보여지는 슬라이드의 넘버
+  var mySlide = document.getElementsByClassName('myslide');
+
+    function slidePrev()  {
+      //모든 슬라이드를 display="none"해주고
+      for (i=0 ; i<mySlide.length ; i++) {  
+         mySlide[i].style.display="none";
+      } 
+
+      if (slideIndex == 1) {  // 현재 슬라이드가 1일 경우에는 마지막 슬라이드            
+        mySlide[mySlide.length -1].style.display="block";
+        slideIndex = mySlide.length;
+      }
+
+      else {  // 현재 슬라이드가 2.3.4일 경우에는 각각 전 슬라이드                
+        mySlide[slideIndex -2 ].style.display="block";
+        slideIndex = slideIndex - 1 ;
+      }
+    }
+
+
+    function slideNext()  {   
+      
+      console.log(mySlide.length)
+      //모든 슬라이드를 display="none"해주고
+      for (i=0 ; i<mySlide.length; i++) {  
+         mySlide[i].style.display="none";
+      } 
+
+     if (slideIndex == mySlide.length) {  // 현재 마지막 슬라이드 경우에는 슬라이드1                
+        mySlide[0].style.display="block";
+              
+        slideIndex = 1;
+      }
+
+      else {  // 현재 슬라이드가 1.2.3일 경우에는 각각 다음 슬라이드                
+        mySlide[slideIndex].style.display="block";
+        slideIndex = slideIndex + 1;
+      }
+
+    }
+          
+        
+ </script>
+
+ 
+</body> 
+
+
+
+</html>
