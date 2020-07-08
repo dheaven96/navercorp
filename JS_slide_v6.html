@@ -1,10 +1,10 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <title>JS-slide_v5미완성</title>
+  <title>JS-slide_v6</title>
   <meta charset="UTF-8">
-  <meta name="description" content="JS 2개 추가,setTime추가">
-  <meta name="keywords" content="매개변수해야함">
+  <meta name="description" content="6.1월">
+  <meta name="keywords" content="완료">
   <meta name="author" content="Hevin">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 
@@ -37,11 +37,12 @@ header {width: 100%; height: 72px; position: fixed; z-index: 100; background-col
    h1 {font-size: 36px; line-height: 46px; font-family: Arial, Helvetica, sans-serif;}
    p {font-size: 14px; line-height: 24px; font-family: Arial, Helvetica, sans-serif;}
 
-  
-   .slide_container {width: 100%; height: 40vw; margin: 0 auto; position: relative; color:white; margin-top: 72px;}
+   .slide_container {width: 100%; height: 40vw; margin: 0 auto; position: relative; color:white; margin-top: 72px; overflow: hidden;}
 
-   .myslide {width: 100%; height: 100%; background-color: #4C999E; position: absolute; font-size: 50px; display: none;}
-    .myslide:first-child {display: block;}
+   .myslide {width: 100%; height: 100%; background-color: #4C999E; position: absolute; font-size: 50px; display: block; top: 0; left: 100%;}
+    .myslide:first-child {left: 0px;}
+    .myslide:nth-child(4) {left: -100%;}
+
     .text_box { position: absolute; left: 160px; bottom: 80px;}
 
    .myslide h1 {margin-bottom: 32px;}
@@ -156,8 +157,8 @@ header {width: 100%; height: 72px; position: fixed; z-index: 100; background-col
     </div> 
 
 
-    <a class="button_prev" onclick="slidePrev()"></a>
-    <a class="button_next" onclick="slideNext()"></a>
+    <a class="button_prev" id="buttonPrev"></a>
+    <a class="button_next" id="buttonNext"></a>
 
     <div class="slide_bar_bg">
       <span class="slide_bar" id="nowslide_bar"></span>
@@ -165,7 +166,7 @@ header {width: 100%; height: 72px; position: fixed; z-index: 100; background-col
 
     <div class="slide_num">
         <strong id="slide_js_num">1</strong>&nbsp;&nbsp;|&nbsp;&nbsp;4
-      </div>
+    </div>
     
   
   </div>
@@ -173,70 +174,142 @@ header {width: 100%; height: 72px; position: fixed; z-index: 100; background-col
  </main>
 
 
-  
-
 
  <!-- JS -->
  <script>
 
-  var slideIndex = 1;  // 현재 보여지는 슬라이드의 넘버
-  var mySlide = document.getElementsByClassName('myslide');
-  var currentbar = 25;
-  setTimeout(slideNext, 6000);
+  var slideIndex = 0;  // 현재 보여지는 슬라이드의 넘버
 
-    function slidePrev()  {
-      //모든 슬라이드를 display="none"해주고
-      for (i=0 ; i<mySlide.length ; i++) {  
-         mySlide[i].style.display="none";
-      } 
+  var mySlide = document.getElementsByClassName("myslide");
+  var currentbar = 100 / mySlide.length;
 
-      if (slideIndex == 1) {  // 현재 슬라이드가 1일 경우에는 마지막 슬라이드            
-        mySlide[mySlide.length -1].style.display="block";
-        slideIndex = mySlide.length;
-        currentbar = 100;
-        document.getElementById("nowslide_bar").style.width = currentbar + "%"; 
+  var slideInter = setInterval (slideNext, 5000);
 
-        document.getElementById("slide_js_num").innerHTML = slideIndex;
+  function setInterSlide() { slideInter = setInterval (slideNext, 5000); }
+  function clearInterSlide() { clearInterval (slideInter); }
+  
+  window.onload = function() { 
+    document.getElementById("buttonNext").addEventListener('click', slideNext);
+    document.getElementById("buttonPrev").addEventListener('click', slidePrev);
+  };
+
+
+    /* 프리뷰 */
+    function slidePrev()  {  
+
+      clearInterSlide(); 
+
+       if (slideIndex == 0) {  // 첫번째 슬라이드일 경우 마지막 슬라이드
+        mySlide[mySlide.length - 2].style = "left: -100%;"; // 마지막 전 슬라이드 왼쪽으로 대기-3번 슬라이드 준비
+
+        mySlide[slideIndex].style = "left: 100%; transition: left 0.5s;";            
+        mySlide[mySlide.length - 1].style = "left: 0px; transition: left 0.5s;";
       }
 
-      else {  // 현재 슬라이드가 2.3.4일 경우에는 각각 전 슬라이드                
-        mySlide[slideIndex -2 ].style.display="block";
-        slideIndex = slideIndex - 1 ;
-        currentbar = slideIndex * 25;
-        document.getElementById("nowslide_bar").style.width = currentbar + "%";
+      else if (slideIndex == 1) {  // 두번째 슬라이드일 경우 마지막 슬라이드
+        mySlide[mySlide.length - 1].style = "left: -100%;"; // 마지막 슬라이드 왼쪽으로 대기-4번 슬라이드 준비
 
-        document.getElementById("slide_js_num").innerHTML = slideIndex;
+        mySlide[slideIndex].style = "left: 100%; transition: left 0.5s;";            
+        mySlide[slideIndex - 1].style = "left: 0px; transition: left 0.5s;";
       }
+
+      /*else if (slideIndex == mySlide.length - 1) {  // 마지막 슬라이드일 경우 마지막 슬라이드
+        mySlide[slideIndex - 2].style = "left: -100%;"; // 마지막 전 슬라이드 왼쪽으로 대기-3번 슬라이드 준비
+
+        mySlide[slideIndex].style = "left: 100%; transition: left 0.5s;";            
+        mySlide[slideIndex - 1].style = "left: 0px; transition: left 0.5s;";
+      }*/
+
+      else {    
+        mySlide[slideIndex - 2].style = "left: -100%;"; // 마지막 전 슬라이드 왼쪽으로 대기-3번 슬라이드 준비
+
+        mySlide[slideIndex].style = "left: 100%; transition: left 0.5s;";            
+        mySlide[slideIndex - 1].style = "left: 0px; transition: left 0.5s;";
+      }
+
+      slideIndex = slideIndex - 1;  // 슬라이드 인덱스 감소  
+      if (slideIndex < 0) {  // 슬라이드 1에서는 4로
+          slideIndex = mySlide.length - 1;
+      }
+
+      currentbar = currentbar - (100 / mySlide.length);
+      if (currentbar <= 0) {  //
+         currentbar = 100;
+      }
+
+      document.getElementById("nowslide_bar").style.width = currentbar + "%"; 
+      document.getElementById("slide_js_num").innerHTML = slideIndex + 1;
+
+      setTimeout (function() {
+        document.getElementById("buttonNext").addEventListener('click', slideNext);
+        document.getElementById("buttonPrev").addEventListener('click', slidePrev);
+      },1000);
+
+      setInterSlide();      
     }
 
 
+    /* 넥스트 */
     function slideNext()  {   
       
-      console.log(mySlide.length)
-      //모든 슬라이드를 display="none"해주고
-      for (i=0 ; i<mySlide.length; i++) {  
-         mySlide[i].style.display="none";
-      } 
+      console.log(mySlide.length); // 슬라이드 갯수 4가 출력 (디버깅)
 
-     if (slideIndex == mySlide.length) {  // 현재 마지막 슬라이드 경우에는 슬라이드1                
-        mySlide[0].style.display="block";
-        currentbar = 25;
-        document.getElementById("nowslide_bar").style.width = currentbar + "%"; 
-        
-        slideIndex = 1;
-        document.getElementById("slide_js_num").innerHTML = slideIndex;
+      //clearInterval(slideInter); 
+      clearInterSlide();    
+
+      document.getElementById("buttonNext").removeEventListener('click', slideNext);
+      document.getElementById("buttonPrev").removeEventListener('click', slidePrev);
+
+        if (slideIndex == 0) {  // 첫번째 슬라이드 일 경우
+          mySlide[mySlide.length - 1].style = "left: 100%;"; // 마지막 슬라이드 오른쪽으로 대기
+
+          mySlide[slideIndex].style = "left: -100%; transition: left 0.5s;"; // 현재 슬라이드 왼쪽으로 아웃
+          mySlide[slideIndex + 1].style = "left: 0px; transition: left 0.5s;"; // 다음 슬라이드 오른쪽에서 인 
+
+          //mySlide[slideIndex + 1].addEventListener('transitionend', function() {
+          // console.log('Transition ended'); slideInter = setInterval (slideNext, 5000); });  
+          // mySlide[slideIndex + 1].removeEventListener('transitionend', function() {
+          // console.log('Transition ended'); slideInter = setInterval (slideNext, 5000); });               
+        }
+
+        else if (slideIndex == mySlide.length - 1) {  // 마지막 슬라이드 일 경우
+           mySlide[slideIndex - 1].style = "left: 100%;"; // 3번 슬라이드 오른쪽에 준비
+
+           mySlide[slideIndex].style = "left: -100%; transition: left 0.5s;"; // 현재 슬라이드 왼쪽으로 아웃
+           mySlide[0].style = "left: 0px; transition: left 0.5s;"; // 첫번째 슬라이드 오른쪽에서 인
+
+           
+        }     
+
+        else  {
+           mySlide[slideIndex - 1].style = "left: 100%;"; // 다다음 슬라이드 오른쪽에 준비
+
+           mySlide[slideIndex].style = "left: -100%; transition: left 0.5s;"; // 현재 슬라이드 왼쪽으로 아웃
+           mySlide[slideIndex + 1].style = "left: 0px; transition: left 0.5s;"; // 다음 슬라이드 오른쪽에서 인 
+
+                
+        }
+
+
+     slideIndex = slideIndex + 1;  // 슬라이드 인덱스 증가   
+     if (slideIndex > mySlide.length - 1) {  // 슬라이드 4에서는 1로
+        slideIndex = 0;
       }
 
-      else {  // 현재 슬라이드가 1.2.3일 경우에는 각각 다음 슬라이드                
-        mySlide[slideIndex].style.display="block";
-        slideIndex = slideIndex + 1;
-        currentbar = slideIndex * 25;
-        document.getElementById("nowslide_bar").style.width = currentbar + "%"; 
-
-        document.getElementById("slide_js_num").innerHTML = slideIndex;
+     currentbar = currentbar + (100 / mySlide.length);
+     if (currentbar > 100) {  //
+        currentbar = 100 / mySlide.length;
       }
-     setTimeout(slideNext, 5000) 
 
+      document.getElementById("nowslide_bar").style.width = currentbar + "%"; 
+      document.getElementById("slide_js_num").innerHTML = slideIndex + 1;
+      
+      setTimeout (function() {
+        document.getElementById("buttonNext").addEventListener('click', slideNext);
+        document.getElementById("buttonPrev").addEventListener('click', slidePrev);
+      },1000);
+
+      setInterSlide();
     }
           
         

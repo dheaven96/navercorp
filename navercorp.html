@@ -19,26 +19,27 @@
 
 <!-- 헤더 시작 -->
  <header>
-    <nav class="gnb">
+    <!-- gnb -->
+    <nav id="gnb">  
 
       <div class="gnb_left">
-        <div class="logo">NAVER</div>
+        <a href="navercorp.html" class="header_logo"></a>
       </div>
 
-      <div class="gnb_center">
-        <a href="a.html">네이버</a>
-        <a href="b.html">서비스</a>
-        <a href="c.html">가치실현</a>
-        <a href="d.html">홍보</a>
-        <a href="e.html">투자정보</a>
-        <a href="f.html">채용</a>
+      <div class="gnb_center p_eb">
+        <div class="gnb_menu" onmouseover="menuOpen(1)" onmouseout="menuClose()"><a href="https://www.navercorp.com/naver/company">네이버</a></div>
+        <div class="gnb_menu" onmouseover="menuOpen(2)" onmouseout="menuClose()"><a href="https://www.navercorp.com/service/featured">서비스</a></div>
+        <div class="gnb_menu" onmouseover="menuOpen(3)" onmouseout="menuClose()"><a href="https://www.navercorp.com/value/projectFlower">가치실현</a></div>
+        <div class="gnb_menu" onmouseover="menuOpen(4)" onmouseout="menuClose()"><a href="https://www.navercorp.com/promotion/pressReleases">홍보</a></div>
+        <div class="gnb_menu" onmouseover="menuOpen(5)" onmouseout="menuClose()"><a href="https://www.navercorp.com/investment/shareholder">투자정보</a></div>
+        <div class="gnb_menu"><a href="https://recruit.navercorp.com/naver/recruitMain">채용</a></div>
       </div>
 
       <div class="gnb_right">
         <div>
-          <a href="work.html">KOR</a>
+          <a href="https://www.navercorp.com" class="p3">KOR</a>
           <div>|</div>
-          <a href="work.html" class="color_gr">ENG</a>
+          <a href="https://www.navercorp.com/en" class="p3">ENG</a>
         </div>
         <div>
           <div>=</div>
@@ -46,254 +47,464 @@
       </div>
 
     </nav>
+    
+  <!-- lnb 시작 -->   
+      <!-- Local_menu1 네이버 -->
+      <div class="lnb_menu" onmouseover="menuOpen(1)" onmouseout="menuClose()">
+        <dl>
+          <dt class="p_b_fwbig"><a>NAVER</a></dt>
+          <dd class="p2_small"><a>네이버 소개</a></dd>
+          <dd class="p2_small"><a>주요연혁</a></dd>
+          <dd class="p2_small"><a>수상내역</a></dd>
+        </dl>
+        <dl>
+          <dt class="p_b_fwbig"><a>주요 관계사</a></dt>
+        </dl>
+        <dl>
+          <dt class="p_b_fwbig"><a>제휴제안</a></dt>
+          <dd class="p2_small"><a>제휴제안 안내</a></dd>
+          <dd class="p2_small"><a>제휴제안 등록</a></dd>
+          <dd class="p2_small"><a>검토현황 조회</a></dd>
+        </dl>
+        <dl>
+          <dt class="p_b_fwbig"><a>CONTACT</a></dt>
+        </dl>
+      </div>
+    
+      <!-- Local_menu2 서비스 -->
+      <div class="lnb_menu" onmouseover="menuOpen(2)" onmouseout="menuClose()">
+        <dl>
+          <dt class="p_b_fwbig"><a>Featured<br>Services</a></dt>
+        </dl>
+        <dl>
+          <dt class="p_b_fwbig"><a>For<br>Business</a></dt>
+        </dl>
+        <dl>
+          <dt class="p_b_fwbig"><a>For<br>Creators</a></dt>
+        </dl>
+        <dl>
+          <dt class="p_b_fwbig"><a>For<br>Developers</a></dt>
+        </dl>
+        <dl>
+          <dt class="p_b_fwbig"><a>ALL<br>SERVICE</a></dt>
+        </dl>
+      </div>
+    
+      <!-- Local_menu3 가치실현 -->
+      <div class="lnb_menu" onmouseover="menuOpen(3)" onmouseout="menuClose()">
+        <dl>
+          <dt class="p_b_fwbig"><a>프로젝트 꽃</a></dt>
+        </dl>
+        <dl>
+          <dt class="p_b_fwbig"><a>기업윤리</a></dt>
+          <dd class="p2_small"><a>기업윤리규범</a></dd>
+          <dd class="p2_small"><a>기업윤리 상담센터</a></dd>
+        </dl>
+        <dl>
+          <dt class="p_b_fwbig"><a>프라이버시 센터</a></dt>
+          <dd class="p2_small"><a>네이버 리포트</a></dd>
+          <dd class="p2_small"><a>개인정보보호</a></dd>
+          <dd class="p2_small"><a>정보보호인증</a></dd>
+        </dl>
+        <dl>
+          <dt class="p_b_fwbig classify"><a>동반성장</a></dt>
+          <dt class="p_b_fwbig"><a>환경</a></dt>
+          <dd class="p2_small"><a>데이터센터 각</a></dd>
+          <dd class="p2_small"><a>네이버 사옥</a></dd>
+        </dl>
+        <dl>
+          <dt class="p_b_fwbig"><a>With Naver</a></dt>
+          <dd class="p2_small"><a>재단법인 해피빈</a></dd>
+          <dd class="p2_small"><a>네이버 문화재단</a></dd>
+          <dd class="p2_small"><a>커넥트 재단</a></dd>
+          <dd class="p2_small"><a>접근성</a></dd>
+          <dd class="p2_small"><a>네이버 라이브러리</a></dd>
+        </dl>
+      </div>
+    
+      <!-- Local_menu4 홍보 -->
+      <div class="lnb_menu" onmouseover="menuOpen(4)" onmouseout="menuClose()">
+        <dl>
+          <dt class="p_b_fwbig"><a>보도자료</a></dt>
+        </dl>
+        <dl>
+          <dt class="p_b_fwbig"><a>TV광고</a></dt>
+        </dl>
+        <dl>
+          <dt class="p_b_fwbig"><a>미디어 행사</a></dt>
+        </dl>
+        <dl>
+          <dt class="p_b_fwbig"><a>커뮤니케이션 채널</a></dt>
+        </dl>
+      </div>
+    
+      <!-- Local_menu5 투자정보 -->
+      <div class="lnb_menu" onmouseover="menuOpen(5)" onmouseout="menuClose()">
+        <dl>
+          <dt class="p_b_fwbig"><a>기업지배구조</a></dt>
+          <dd class="p2_small"><a>주주구성</a></dd>
+          <dd class="p2_small"><a>이사회</a></dd>
+          <dd class="p2_small"><a>정관</a></dd>
+        </dl>
+        <dl>
+          <dt class="p_b_fwbig classify"><a>공시정보</a></dt>
+          <dt class="p_b_fwbig classify"><a>주가정보</a></dt>
+          <dt class="p_b_fwbig"><a>재무제표</a></dt>
+        </dl>
+        <dl>
+          <dt class="p_b_fwbig"><a>IR일정</a></dt>
+          <dd class="p2_small"><a>IR행사</a></dd>
+          <dd class="p2_small"><a>IR MEETING</a></dd>
+          <dd class="p2_small"><a>주주총회</a></dd>
+        </dl>
+        <dl>
+          <dt class="p_b_fwbig"><a>IR자료실</a></dt>
+          <dd class="p2_small"><a>실적발표</a></dd>
+          <dd class="p2_small"><a>감사보고서</a></dd>
+          <dd class="p2_small"><a>사업보고서</a></dd>
+          <dd class="p2_small"><a>연차보고서</a></dd>
+          <dd class="p2_small"><a>FAQ</a></dd>
+        </dl>
+        <dl>
+          <dt class="p_b_fwbig classify"><a>결산공고</a></dt> 
+          <dt class="p_b_fwbig"><a>공고</a></dt>
+        </dl>
+      </div>
+  <!-- lnb 끝 -->  
+    
  </header>
+
+
+ <!-- 메뉴 JS -->
+ <script> 
+  function menuOpen(openIndex) {
+    for (i=0; i<document.getElementsByClassName("lnb_menu").length; i++) {
+      document.getElementsByClassName("lnb_menu")[i].style="height: 0;";
+      document.getElementsByClassName("lnb_menu")[openIndex - 1].style="height: 276px;";
+    }
+  }
+
+  function menuClose () {
+    for (i=0; i<document.getElementsByClassName('lnb_menu').length; i++) {
+      document.getElementsByClassName('lnb_menu')[i].style="height: 0;";
+    }
+  }
+</script>
 
 
 <!-- 메인 시작 -->
  <main>
-  <div class="slide_container">  <!-- 슬라이드 영역 -->
+  <section class="slide_container">  <!-- 슬라이드 영역 -->
 
     <div class="myslide">
         <div class="myslide1_bg">
           <div class="text_box">
             <h1>삶의 가치를 높이는<br>기술을 연구합니다.</h1>
             <p>당신이 더 가치 있는 일에 몰입할 수 있도록<br>삶을 더 깊이 이해하는 기술을 만들어갑니다.</p>          
-            <p><strong>1</strong>&nbsp;&nbsp;|&nbsp;&nbsp;4</p>
           </div>
-          <h2 class="myslide1_logo"></h2>
+          <a href="https://blog.naver.com/naver_search/221091016483" class="myslide1_logo"></a>
         </div>
     </div>
 
     <div class="myslide">
         <div class="myslide2_bg">
           <div class="text_box">
-            <h1>삶의 가치를 높이는<br>기술을 연구합니다.</h1>
-            <p>당신이 더 가치 있는 일에 몰입할 수 있도록<br>삶을 더 깊이 이해하는 기술을 만들어갑니다.</p>
-            <p><strong>2</strong>&nbsp;&nbsp;|&nbsp;&nbsp;4</p>
+            <h1>무한한 가능성과의<br>만남을 기대합니다.</h1>
+            <p>다양한 스몰비즈니스와 크리에이터의 가치가 발견되고<br>그 이름을 꽃 피울 수 있도록 함께합니다.</p>
           </div>
-          <h2 class="myslide2_logo"></h2>
+          <a href="https://blog.naver.com/naver_diary/221196347486" class="myslide2_logo"></a>
         </div>
     </div>
 
     <div class="myslide">
         <div class="myslide3_bg">
           <div class="text_box">
-            <h1>삶의 가치를 높이는<br>기술을 연구합니다.</h1>
-            <p>당신이 더 가치 있는 일에 몰입할 수 있도록<br>삶을 더 깊이 이해하는 기술을 만들어갑니다.</p>
-            <p><strong>3</strong>&nbsp;&nbsp;|&nbsp;&nbsp;4</p>
+            <h1>더 넓은 세상에서<br>더 큰 미래를 생각합니다.</h1>
+            <p>전 세계 이용자들을 만나 새로운 경험과 가치를 전달하고<br>글로벌과 호흡하는 기술을 통해, 한 단계 진화한 연결을 만들어갑니다.</p>
           </div>
-          <h2 class="myslide3_logo"></h2>
+          <a href="http://spacegreen.co/" class="myslide3_logo"></a>
         </div>
     </div>
 
     <div class="myslide">
         <div class="myslide4_bg">
           <div class="text_box">
-            <h1>삶의 가치를 높이는<br>기술을 연구합니다.</h1>
-            <p>당신이 더 가치 있는 일에 몰입할 수 있도록<br>삶을 더 깊이 이해하는 기술을 만들어갑니다.</p>
-            <p><strong>4</strong>&nbsp;&nbsp;|&nbsp;&nbsp;4</p>
+            <h1>생활환경지능 기술로<br>새로운 연결과 발견의 가능성을 만듭니다.</h1>
+            <p>네이버랩스는 사용자의 환경과 상황을 인지하고 이해하여 <br>필요한 정보와 서비스를 알아서 자연스럽게 연결하는 기술을 연구합니다.</p>
           </div>
-          <h2 class="myslide4_logo"></h2>
+          <a href="https://www.naverlabs.com/" class="myslide4_logo"></a>
         </div>
     </div> 
 
-
+   <!-- 슬라이드 버튼 -->
     <a class="button_prev" onclick="slidePrev()"></a>
     <a class="button_next" onclick="slideNext()"></a>
-
+   <!-- 슬라이드 바 -->
     <div class="slide_bar_bg">
       <span class="slide_bar" id="nowslide_bar"></span>
     </div>
-
+   <!-- 슬라이드 넘버 -->
     <div class="slide_num">
         <strong id="slide_js_num">1</strong>&nbsp;&nbsp;|&nbsp;&nbsp;4
-      </div>
+    </div>
       
-  </div>
+  </section>
 
-  <div class="content_container"> <!-- 콘텐츠 영역 -->
+  <section class="content_container"> <!-- 콘텐츠 영역 -->
 
     <ul class="summary_wrap"> <!-- summary_text -->
-			<li class="first_li"> 
-				<h3>NEWS</h3>
-				<div class="news_box"> 
-					<a href="https://www.navercorp.com/promotion/pressReleasesView/30238">
-						<strong class="news_title">네이버,&nbsp;개인정보보호위원회 주최 ‘2020&nbsp;개인정보보호</strong> 						
-						<p class="news_text"> 
-              네이버,&nbsp;개인정보보호위원회 주최 ‘2020&nbsp;개인정보보호 인식 주간 캠페인’&nbsp;참여-&nbsp;개인정보보호위원회, APPA가 함께 개최
-            </p> 
-					</a> 
-				</div>
-				<a href="https://www.navercorp.com/promotion/pressReleasesView/30238" class="summary_link">바로가기<span class="icon_arrow"></span>
+			<li> 
+				<p class="summary_title p2_eb">NEWS</p>        
+        <div class="main_box">
+					<h6 class="news_title">네이버,&nbsp;개인정보보호위원회 주최 ‘2020&nbsp;개인정보보호</h6>						
+          <p>네이버,&nbsp;개인정보보호위원회 주최 ‘2020&nbsp;개인정보보호 인식 주간 캠페인’&nbsp;참여-&nbsp;개인정보보호위원회, APPA가 함께 개최</p> 
+        </div>					
+				<a href="https://www.navercorp.com/promotion/pressReleasesView/30238" class="p_b">바로가기<div class="icon_arrow"></div>
         </a>				
 			</li>
 			
-			<li class="sec_li">
-				<h3>CAREER</h3>
-        <p class="career_text">수 많은 사용자의 목소리에서<br>내 일의 자부심과 무게를 느낍니다.
-        </p>
-        <a href="https://recruit.navercorp.com/naver/recruitMain" class="summary_link">네이버에서 일한다는 것<span class="icon_arrow"></span>
+			<li>
+				<p class="summary_title p2_eb">CAREER</p>
+        <h5 class="main_box">수 많은 사용자의 목소리에서<br>내 일의 자부심과 무게를 느낍니다.</h5>
+        <a href="https://recruit.navercorp.com/naver/recruitMain" class="p_b">네이버에서 일한다는 것<div class="icon_arrow"></div>
         </a>
 			</li>
 			
-			<li class="sec_li">
-					<h3>STOCK</h3>
-					<div class="stock_info_box">
+			<li>
+        <p class="summary_title p2_eb">STOCK</p>
+					<div class="main_box">
 						<div class="stock_price_box">
-							<p class="price">241,000<span class="unit">원</span></p>
+							<h3 class="price">241,000<span class="unit">원</span></h3>
 							<span class="figure type2">10,500</span>
 						</div>
-						<p class="date">KRX 2020.05.25</p>
+						<p id="pr_date"></p>
 					</div>
-					<a href="https://www.navercorp.com/investment/stock" class="summary_link">주가정보<span class="icon_arrow"></span></a>	
-			</li>
+					<a href="https://www.navercorp.com/investment/stock" class="p_b">주가정보<div class="icon_arrow"></div></a>	
+      </li>
+      
+<!-- summary STOCK date JS -->      
+     <script>
+        var today= new Date();
+        var year= today.getFullYear();
+        var month= today.getMonth() +1;
+        var date= today.getDate()
+        
+        if(month < 10){ 
+           month = "0" + month; 
+        } 
+        if(date < 10){ 
+          date = "0" + date; 
+        }
+       
+        document.getElementById('pr_date').innerHTML="KRX "+ year +"."+ month + "." + date;
+        
+     </script>
 		
-			<li class="last_li">
-				<h3 class="summary_title">결산공고</h3>
-				<p class="career_text">네이버 상세 재무상태표를 <br>확인할 수 있습니다.</p>
-				<a href="https://www.navercorp.com/investment/settlementNotice" class="summary_link">결산공고 보러가기<span class="icon_arrow"></span></a>
+			<li>
+				<p class="summary_title p2_eb">결산공고</p>
+				<h5 class="main_box">네이버 상세 재무상태표를 <br>확인할 수 있습니다.</h5>
+				<a href="https://www.navercorp.com/investment/settlementNotice" class="p_b">결산공고 보러가기<div class="icon_arrow"></div></a>
 			</li>
     </ul>
 
+    
     <ul class="thumbnail_wrap"> <!-- service_thumbnail -->			
       <li style="background-image: url(img/main_content10.png);">
-        <a href="https://www.naverlabs.com/5gbrainlessrobot" class="thumbnail">
-          <dl>
-            <dt>5G 브레인리스 로봇 기술</dt>
-            <dd>로봇의 두뇌를 클라우드로</dd>
-          </dl>
+        <a href="https://www.naverlabs.com/5gbrainlessrobot">
+          <div class="thumbnail">
+            <div class="thumbnail_icon"></div>
+            <h4>5G 브레인리스 로봇 기술</h4>
+            <p>로봇의 두뇌를 클라우드로</p>
+          </div>
         </a>
       </li>
     
       <li style="background-image: url(img/main_content11.png);">
-        <a href="https://www.naverlabs.com/onroadintelligence" class="thumbnail">
-          <dl>
-            <dt>On-road intelligence</dt>
-            <dd>도로 위 자율주행을 위한 통합 솔루션</dd>
-          </dl>
+        <a href="https://www.naverlabs.com/onroadintelligence">
+          <div class="thumbnail">
+            <div class="thumbnail_icon"></div>
+            <h4>On-road intelligence</h4>
+            <p>도로 위 자율주행을 위한 통합 솔루션</p>
+          </div>
         </a>
       </li>
     
       <li style="background-image: url(img/main_content3.png);">
-        <a href="https://clova.ai/ko/ko-product-friends-minions.html" class="thumbnail">
-          <dl>
-            <dt>클로바 스페셜 에디션</dt>
-            <dd>음악 추천부터 네이버 검색까지</dd>
-          </dl>
+        <a href="https://clova.ai/ko/ko-product-friends-minions.html">
+          <div class="thumbnail">
+            <div class="thumbnail_icon"></div>
+            <h4>클로바 스페셜 에디션</h4>
+            <p>음악 추천부터 네이버 검색까지</p>
+          </div>
         </a>
       </li>
       
       <li style="background-image: url(img/main_content4.png);">
-        <a href="https://whale.naver.com/ko/" class="thumbnail">
-          <dl>
-            <dt>네이버 웨일</dt>
-            <dd>인터넷의 새로운 시작</dd>
-          </dl>
+        <a href="https://whale.naver.com/ko/">
+          <div class="thumbnail">
+            <div class="thumbnail_icon"></div>
+            <h4>네이버 웨일</h4>
+            <p>인터넷의 새로운 시작</p>
+          </div>
         </a>
       </li>
       
       <li style="background-image: url(img/main_content5.png);">
-        <a href="https://datacenter.navercorp.com" class="thumbnail">
-          <dl>
-            <dt>데이터센터 각</dt>
-            <dd>데이터를 통해 현재를 기록하는 곳</dd>
-          </dl>
+        <a href="https://datacenter.navercorp.com">
+          <div class="thumbnail">
+            <div class="thumbnail_icon"></div>
+            <h4>데이터센터 각</h4>
+            <p>데이터를 통해 현재를 기록하는 곳</p>
+          </div>
         </a>
       </li>
       
       <li style="background-image: url(img/main_content6.png);">
-        <a href="https://www.navercorp.com/value/greenfactory" class="thumbnail">
-          <dl>
-            <dt>그린팩토리</dt>
-            <dd>네이버의 공간이야기</dd>
-          </dl>
+        <a href="https://www.navercorp.com/value/greenfactory">
+          <div class="thumbnail">
+            <div class="thumbnail_icon"></div>
+            <h4>그린팩토리</h4>
+            <p>네이버의 공간이야기</p>
+          </div>
         </a>
       </li>
       
       <li style="background-image: url(img/main_content7.png);">
-        <a href="https://webtoonscorp.com/" class="thumbnail">
-          <dl>
-            <dt>네이버 웹툰</dt>
-            <dd>매일매일 새로운 재미</dd>
-          </dl>
+        <a href="https://webtoonscorp.com/">
+          <div class="thumbnail">
+            <div class="thumbnail_icon"></div>
+            <h4>네이버 웹툰</h4>
+            <p>매일매일 새로운 재미</p>
+          </div>
         </a>
       </li>
       
       <li style="background-image: url(img/main_content8.png);">
-        <a href="https://www.navercorp.com/value/projectFlower" class="thumbnail">
-          <dl>
-            <dt>프로젝트 꽃</dt>
-            <dd>가치의 발견과 성장</dd>
-          </dl>
+        <a href="https://www.navercorp.com/value/projectFlower">
+          <div class="thumbnail">
+            <div class="thumbnail_icon"></div>
+            <h4>프로젝트 꽃</h4>
+            <p>가치의 발견과 성장</p>
+          </div>
         </a>
       </li>
     
       <li style="background-image: url(img/main_content12.png);">
-        <a href="https://audioclip.naver.com" class="thumbnail">
-          <dl>
-            <dt>오디오클립</dt>
-            <dd>즐거움이 들린다</dd>
-          </dl>
+        <a href="https://audioclip.naver.com">
+          <div class="thumbnail">
+            <div class="thumbnail_icon"></div>
+            <h4>오디오클립</h4>
+            <p>즐거움이 들린다</p>
+          </div>
         </a>
       </li>
       
     </ul>
     
-    <div class="support_wrap"> <!-- service_thumbnail -->
+    <div class="support_wrap"> <!-- support -->
 			
 			<div class="support_info">
-				<h3>기술로 다양성을 꽃피우는 플랫폼</h3>
-				<p>개인의 다양한 가능성이 의미있는 성공으로 꽃 피울 수 있도록<br>네이버가 서비스와 기술플랫폼을 통해 더 가까이 서포트(SUPPORT) 합니다.</p>
+				<h2>기술로 다양성을 꽃피우는 플랫폼</h2>
+				<h5 class="h5_small">개인의 다양한 가능성이 의미있는 성공으로 꽃 피울 수 있도록<br>네이버가 서비스와 기술플랫폼을 통해 더 가까이 서포트(SUPPORT) 합니다.</h5>
       </div>
       
 			<ul class="support_list">		
 				<li>
-					<a href="https://www.navercorp.com/service/creators">
-						<dl>
-							<dt>Creators With Naver</dt>
-							<dd><span>다양한 분야의 창작자들이 그들의 이름을</span>빛낼 수 있도록 네이버가 함께 합니다.</dd>
-						</dl>
+          <a href="https://www.navercorp.com/service/creators">
+            <div class="creators"></div>
+						<div>              
+							<h6>Creators With Naver</h6>
+							<p><span>다양한 분야의 창작자들이 그들의 이름을</span>빛낼 수 있도록 네이버가 함께 합니다.</p>
+						</div>
 					</a>
 				</li>
 				
 				<li>
-					<a href="https://www.navercorp.com/service/business" class="business">
-						<dl>
-							<dt>Business With Naver</dt>
-							<dd><span>파트너들의 성공적인 창업과</span>지속가능한 사업을 위해 노력합니다.</dd>
-						</dl>
+          <a href="https://www.navercorp.com/service/business">
+            <div class="business"></div>
+						<div>    
+							<h6>Business With Naver</h6>
+							<p><span>파트너들의 성공적인 창업과</span>지속가능한 사업을 위해 노력합니다.</p>
+						</div>
 					</a>
 				</li>
 				
 				<li>
-					<a href="https://www.navercorp.com/service/developers" class="developers">
-						<dl>
-							<dt>Developers With Naver</dt>
-							<dd><span>개발자와 개발사들의 지식과 경험을</span>공유하며 함께 성장해 나갑니다.</dd>
-						</dl>
+          <a href="https://www.navercorp.com/service/developers">
+            <div class="developers"></div>
+						<div>             
+							<h6>Developers With Naver</h6>
+							<p><span>개발자와 개발사들의 지식과 경험을</span>공유하며 함께 성장해 나갑니다.</p>
+						</div>
 					</a>
 				</li>
 			
 				<li>
-					<a href="https://www.navercorp.com/value/projectFlower" class="flower">
-						<dl>
-							<dt>프로젝트 꽃</dt>
-							<dd><span>다양한 스몰비즈니스와 크리에이터들이</span>꽃 피울 수 있도록 네이버가 함께 합니다.</dd>
-						</dl>
+          <a href="https://www.navercorp.com/value/projectFlower">
+            <div class="flowers"></div>
+						<div>             
+							<h6>프로젝트 꽃</h6>
+							<p><span>다양한 스몰비즈니스와 크리에이터들이</span>꽃 피울 수 있도록 네이버가 함께 합니다.</p>
+						</div>
 					</a>
 				</li>
 			</ul>
-		</div>
-		
+		</div>		
 
-  </div>
-
+  </section>
 
  </main>
 
-
+<!-- footer 시작 -->
  <footer>
+  <div class="footer_left">
+		<a class="footer_logo"></a>
+		<ul class="footer_menu p2">
+			<li>
+				<a>제휴제안</a>
+			</li>
+			<li>
+				<a>기업윤리 상담센터</a>
+			</li>
+			<li>
+				<a style="font-weight: bold;">개인정보 처리방침</a>
+			</li>
+		</ul>
+  </div>
 
+  <div class="footer_copy"></div>
+
+  <div class="footer_right">
+    <div class="affiliate_box p2" aria-haspopup="true">
+			
+		 <button type="button" class="btn_affiliate" aria-expanded="false">자회사 바로가기</button>
+			<ul class="affiliate_list" role="listbox">
+				
+				<li class="affiliate_item" role="option" aria-selected="false">
+					<a target="_blank"><span>LINE</span></a>
+				</li>
+				<li class="affiliate_item" role="option" aria-selected="false">
+					<a target="_blank"><span>NAVER Labs</span></a>
+				</li>
+				<li class="affiliate_item" role="option" aria-selected="false">
+					<a target="_blank"><span>NBP</span></a>
+				</li>
+				<li class="affiliate_item" role="option" aria-selected="false">
+					<a target="_blank"><span>SNOW</span></a>
+				</li>
+				<li class="affiliate_item" role="option" aria-selected="false">
+					<a target="_blank"><span>Webtoon</span></a>
+				</li>
+				<li class="affiliate_item" role="option" aria-selected="false">
+					<a target="_blank"><span>Works Mobile</span></a>
+				</li>
+				<li class="affiliate_item" role="option" aria-selected="false">
+					<a target="_blank"><span>NAVER FINANCIAL</span></a>
+				</li>
+			</ul>
+    </div>
+		
+	</div>
  </footer>
   
 
@@ -316,7 +527,6 @@
         slideIndex = mySlide.length;
         currentbar = 100;
         document.getElementById("nowslide_bar").style.width = currentbar + "%"; 
-
         document.getElementById("slide_js_num").innerHTML = slideIndex;
       }
 
@@ -325,7 +535,6 @@
         slideIndex = slideIndex - 1 ;
         currentbar = slideIndex * 25;
         document.getElementById("nowslide_bar").style.width = currentbar + "%";
-
         document.getElementById("slide_js_num").innerHTML = slideIndex;
       }
     }
@@ -343,9 +552,8 @@
         mySlide[0].style.display="block";
         currentbar = 25;
         document.getElementById("nowslide_bar").style.width = currentbar + "%"; 
-        
-        slideIndex = 1;
-        document.getElementById("slide_js_num").innerHTML = slideIndex;
+        slideIndex = 1; 
+        document.getElementById("slide_js_num").innerHTML = slideIndex;          
       }
 
       else {  // 현재 슬라이드가 1.2.3일 경우에는 각각 다음 슬라이드                
@@ -353,7 +561,6 @@
         slideIndex = slideIndex + 1;
         currentbar = slideIndex * 25;
         document.getElementById("nowslide_bar").style.width = currentbar + "%"; 
-
         document.getElementById("slide_js_num").innerHTML = slideIndex;
       }
      setTimeout(slideNext, 5000) 
